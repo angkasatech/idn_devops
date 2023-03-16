@@ -1,0 +1,17 @@
+- name: playbook for ubuntu
+  host: devops2
+  tasks:
+    - name: install apache2
+      apt:
+        name: install apache2
+        state: present
+    
+    #- name: copy file ke server
+    #  copy:
+    #    src: index.html
+    #    dest: /var/www/html
+
+    #- name: restart apache2
+    #  systemd:
+    #    name: apache2
+    #    state: restarted
