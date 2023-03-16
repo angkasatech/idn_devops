@@ -1,0 +1,27 @@
+- name: running docker compose file as stack
+  hosts: devops1
+  tasks:
+    - name: install python
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop: 
+        - python
+        - docker-python
+        - python-pip
+    
+    - name: install module python
+      ansible.builtin.pip:
+        name: jsondiff
+        state: present
+
+    - name: deploy stack
+      docker_stack:
+        state: present
+        name: stack-rafi
+        compose:
+        - docker-compose.yml
+
+    - name: scale service
+      shell: docker service scale stack-rafi_web=6
+      
