@@ -56,7 +56,7 @@ Add file
 ```
 git add file
 ```
-### Add recusrive file to repository
+### Add recursive file to repository
 Add multiple file and folder
 ```
 git add .
@@ -123,8 +123,59 @@ git revert --continue
 ```
 ## Branching and Merging
 ### Branch
-### Merge
-### Resolved Conflict
+git-branch - List, create, or delete branches
 
+list branch
+```
+git branch
+```
+
+create branch
+```
+git branch branch
+```
+
+switch branch
+```
+git switch branch
+```
+
+delete branch
+```
+git branch -d branch
+```
+### Show changes
+git-diff - Show changes between commits, commit and working tree, etc
+
+Show changes dev-branch and main-branch
+```
+git diff dev main
+```
+
+### Merge
+git-merge - Join two or more development histories together
+
+merge dev-branch to main-branch
+```
+git switch main
+git merge dev
+```
+### Resolved Conflict
+Fix manually and then commit changes
 ## Tagging
-### Tag
+Tagging
+
+List tag
+```
+git tag
+```
+
+Create tag
+```
+git tag -a versi -m "message" commit-id
+```
+
+Delete tag
+```
+git tag -d versi
+```
