@@ -6,7 +6,7 @@ create account on [here](https://github.com/)
 ### Working with Github
 list remote
 ```
-git remote
+git remote -v
 ```
 
 add remote

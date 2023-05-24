@@ -132,17 +132,17 @@ git branch
 
 create branch
 ```
-git branch branch
+git branch branch-name
 ```
 
 switch branch
 ```
-git switch branch
+git switch branch-name
 ```
 
 delete branch
 ```
-git branch -d branch
+git branch -d branch-name
 ```
 ### Show changes
 git-diff - Show changes between commits, commit and working tree, etc
