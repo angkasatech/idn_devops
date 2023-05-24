@@ -1,7 +1,9 @@
 ### Rundown Training
-# DevOps Introduction
+# Introduction DevOps Concept
 # Git : Version Control System
+# Github : Source Code Management
+# SonarQube: Testing & Code Analysis
 # Docker : Containerization
-# Ansible : Configuration Management Tools
 # Jenkins : CI/CD Tools
-# Zabbix : Monitoring Tools
+# Prometheus : Monitoring System
+# Grafana : Dashboard

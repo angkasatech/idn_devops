@@ -1,6 +1,0 @@
-version: "3.9"
-services:
-  web:
-    image: idndevops/image-rafi
-    ports:
-      - "80:80"

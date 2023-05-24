@@ -73,4 +73,4 @@ systemctl enable sonar
 systemctl status sonar
 
 ### Access Sonarqube
-http://server_IP:9000
+http://server:9000
