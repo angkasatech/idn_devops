@@ -2,7 +2,7 @@
 
 ## Prerequisite
 ### Download source code
-You can fork on my github [here]{https://github.com/IDN-Training/simple-apps}
+You can fork on my github [here](https://github.com/IDN-Training/simple-apps)
 
 and you download source code to local (development) and server (deployment)
 ```
