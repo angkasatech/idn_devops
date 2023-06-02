@@ -1,5 +1,5 @@
 # devops-training-idn
-Training DevOps ID#N
+Training DevOps IDN
 ## Rundown Training
 - Introduction DevOps Concept
 - Git : Version Control System
