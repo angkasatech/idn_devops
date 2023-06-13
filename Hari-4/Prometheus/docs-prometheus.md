@@ -1,25 +1,48 @@
 # Prometheus
 
 ## Install Prometheus
+Download prometheus package
+```
 wget https://github.com/prometheus/prometheus/releases/download/v2.37.8/prometheus-2.37.8.linux-amd64.tar.gz
+```
+
+Extract prometheus package
+```
 tar -zxvf prometheus-2.37.8.linux-amd64.tar.gz
-
 mv -v prometheus-2.37.8.linux-amd64 /etc/prometheus
-cd /etc/prometheus
+```
 
+Running and configuration prometheus
+```
+cd /etc/prometheus
 vim prometheus.yml
 ./prometheus --config.file=prometheus.yml
+```
 
+Access prometheus ui
+```
 http://localhost:9090/
+```
 
+Query prometheus
+```
 prometheus_target_interval_length_seconds
+```
 
 ## Setup Exporter
 ### Node Exporter
+Download node exporter package
+```
 wget https://github.com/prometheus/node_exporter/releases/download/v1.6.0/node_exporter-1.6.0.linux-amd64.tar.gz
-tar -zxvf node_exporter-1.6.0.linux-amd64.tar.gz
+```
 
+Extract node exporter package
+```
+tar -zxvf node_exporter-1.6.0.linux-amd64.tar.gz
 mv -v node_exporter-1.6.0.linux-amd64.tar.gz /etc/node_exporter
+```
+
+
 cd /etc/node_exporter
 
 ./node_exporter --web.listen-address ip-address:port
