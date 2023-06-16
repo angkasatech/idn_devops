@@ -50,14 +50,14 @@ cd /etc/node_exporter
 http://ip-address:port/metrics
 
 vim prometheus.yml
-
+```
 - job_name: "Server monitoring"
     scrape_interval: 5s
     static_configs:
       - targets: ["10.23.0.11:8000", "10.23.0.12:8001", "10.23.0.13:8003"]
         labels:
           group: 'devops'
-
+```
 ./prometheus --config.file=prometheus.yml
 
 http://localhost:9090/
