@@ -116,7 +116,7 @@ chown -R sonar:sonar /opt/sonarqube
 
 Create link sonarqube server
 ```
-ln -s vim /opt/sonarqube/bin/linux-x86-64/sonar.sh /usr/bin/
+ln -s /opt/sonarqube/bin/linux-x86-64/sonar.sh /usr/bin/
 ```
 
 ### Config Sonarqube
