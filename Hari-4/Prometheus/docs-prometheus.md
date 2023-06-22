@@ -42,14 +42,23 @@ tar -zxvf node_exporter-1.6.0.linux-amd64.tar.gz
 mv -v node_exporter-1.6.0.linux-amd64.tar.gz /etc/node_exporter
 ```
 
-
+Start Service
+```
 cd /etc/node_exporter
-
 ./node_exporter --web.listen-address ip-address:port
+```
 
+Access node metric
+```
 http://ip-address:port/metrics
+```
 
+Config prometheus
+```
 vim prometheus.yml
+```
+
+Add Targets
 ```
 - job_name: "Server monitoring"
     scrape_interval: 5s
@@ -58,12 +67,21 @@ vim prometheus.yml
         labels:
           group: 'devops'
 ```
+
+Start service
+```
 ./prometheus --config.file=prometheus.yml
+```
 
+Access prometheus ui
+```
 http://localhost:9090/
+```
 
+Query metric
+```
 rate(node_cpu_seconds_total{mode="system"}[1m])
-
+```
 ### Docker Cadvisor Exporter
 sudo docker run \
   --volume=/:/rootfs:ro \
