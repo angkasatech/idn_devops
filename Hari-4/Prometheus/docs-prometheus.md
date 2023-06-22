@@ -83,6 +83,8 @@ Query metric
 rate(node_cpu_seconds_total{mode="system"}[1m])
 ```
 ### Docker Cadvisor Exporter
+Running cAdvisor in a Docker Container
+```
 sudo docker run \
   --volume=/:/rootfs:ro \
   --volume=/var/run:/var/run:ro \
@@ -95,24 +97,41 @@ sudo docker run \
   --privileged \
   --device=/dev/kmsg \
   gcr.io/cadvisor/cadvisor:v0.36.0
-
+```
+cAdvisor is now running (in the background) on
+```
 http://ip-address:port/
+```
 
+Config prometheus
+```
 vim prometheus.yml
+```
 
+Add targets
+```
 - job_name: "docker monitoring"
     scrape_interval: 5s
     static_configs:
       - targets: ["10.23.0.12:8008"]
         labels:
           group: 'docker'
+```
 
+Start Service
+```
 ./prometheus --config.file=prometheus.yml
+```
 
+Access prometheus ui
+```
 http://localhost:9090/
+```
 
+Query metric
+```
 rate(container_cpu_usage_seconds_total{name="redis"}[1m])
-
+```
 ### Nginx Exporter
 vim default.conf
 server {
