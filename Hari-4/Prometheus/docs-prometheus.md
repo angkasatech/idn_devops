@@ -39,7 +39,7 @@ wget https://github.com/prometheus/node_exporter/releases/download/v1.6.0/node_e
 Extract node exporter package
 ```
 tar -zxvf node_exporter-1.6.0.linux-amd64.tar.gz
-mv -v node_exporter-1.6.0.linux-amd64.tar.gz /etc/node_exporter
+mv -v node_exporter-1.6.0.linux-amd64 /etc/node_exporter
 ```
 
 Start Service
