@@ -133,7 +133,13 @@ Query metric
 rate(container_cpu_usage_seconds_total{name="redis"}[1m])
 ```
 ### Nginx Exporter
+Edit nginx config
+```
 vim default.conf
+```
+
+Add metrics 
+```
 server {
     listen       80;
     server_name  localhost;
@@ -147,23 +153,42 @@ server {
         stub_status;
     }
 }
+```
 
+Deploy nginx exporter
+```
 docker container run -d --rm -p 9113:9113 --name nginx-exporter nginx/nginx-prometheus-exporter -nginx.scrape-uri http://ipaddress:port/metrics
+```
 
+Config prometheus
+```
 vim prometheus.yml
+```
 
+Add targets
+```
 - job_name: "nginx monitoring"
     scrape_interval: 5s
     static_configs:
       - targets: ["10.23.0.12:9113"]
         labels:
           group: 'nginx'
+```
 
+Start Service
+```
 ./prometheus --config.file=prometheus.yml
+```
 
+Access prometheus ui
+```
 http://localhost:9090/
+```
 
+Query metric
+```
 nginx_connections_active
+```
 ## Setup rule
 ### Setup basic rule
 vim prometheus.rules.yml
