@@ -8,4 +8,14 @@ sudo dpkg -i grafana_9.5.2_amd64.deb
 
 systemctl enable grafana-server --now
 ```
+
+Access grafana dashboard
+```
 http://localhost:3000
+```
+
+Login 
+```
+username: admin
+password: admin
+```
