@@ -191,24 +191,38 @@ nginx_connections_active
 ```
 ## Setup rule
 ### Setup basic rule
+```
 vim prometheus.rules.yml
+```
 
+```
 groups:
   - name: cpu-node
     rules:
     - record: job_instance_mode:node_cpu_seconds:avg_rate5m
       expr: avg by (job, instance, mode) (rate(node_cpu_seconds_total[5m]))
+```
 
+```
 vim prometheus.yml
+```
 
+```
 rule_files:
   - prometheus.rules.yml
+```
 
+```
 ./prometheus --config.file=prometheus.yml
+```
+
 ## Setup Alert
 ### Alert Server is down
+```
 vim server.rules.yml
+```
 
+```
 groups:
 - name: server_down
   rules:
@@ -219,17 +233,28 @@ groups:
       severity: page
     annotations:
       summary: Server are down.
+```
 
+```
 vim prometheus.yml
+```
 
+```
 rule_files:
   - prometheus.rules.yml
   - server.rules.yml
+```
 
+```
 ./prometheus --config.file=prometheus.yml
-### Alert CPU and memory > 50%
-vim cpu.rules.yml
+```
 
+### Alert CPU and memory > 50%
+```
+vim cpu.rules.yml
+```
+
+```
 groups:
   - name: example_alerts
     rules:
@@ -241,12 +266,19 @@ groups:
       annotations:
         summary: High CPU utilization on host {{ $labels.instance  }}
         description: The CPU utilization on host {{ $labels.instance }} has exceeded 50 for 1 minutes.
+```
 
+```
 vim prometheus.yml
+```
 
+```
 rule_files:
   - prometheus.rules.yml
   - server.rules.yml
   - cpu.rules.yml
+```
 
+```
 ./prometheus --config.file=prometheus.yml
+```
