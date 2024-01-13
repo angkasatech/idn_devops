@@ -11,8 +11,7 @@ git clone https://github.com/idndevops/simple-apps.git
 ### Download package nodejs
 Install nodejs versi 18.x
 ```
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt-get install -y nodejs
 ```
 
 ## Database Installation
