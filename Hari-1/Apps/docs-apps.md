@@ -25,6 +25,7 @@ Create with mariadb syntax
 ```
 create database training;
 grant all privileges on training.* to 'peserta'@'localhost' identified by 'password';
+grant all privileges on training.* to 'peserta'@'%' identified by 'password';
 flush privileges;
 quit;
 ```
