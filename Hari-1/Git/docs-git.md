@@ -103,7 +103,7 @@ git-reset - Reset current HEAD to the specified state
 
 Unstagged file
 ```
-git reset --stagged file
+git restore --staged file
 ```
 
 discard changed file
