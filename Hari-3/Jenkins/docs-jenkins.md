@@ -34,6 +34,15 @@ pipeline {
             }
         }
         
+        stage('Build') {
+            steps {
+                sh'''
+                cd app
+                npm install
+                '''
+            }
+        }
+        
         stage('Testing') {
             steps {
                 sh'''
@@ -77,6 +86,7 @@ pipeline {
         
     }
 }
+
 
 ```
 
