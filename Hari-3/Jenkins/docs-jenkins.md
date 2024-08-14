@@ -22,7 +22,7 @@ sudo apt-get install fontconfig openjdk-11-jre
 sudo apt-get install jenkins
 ```
 
-Pipeline
+Pipeline and Jenkinsfile
 ```
 pipeline {
     agent { label 'devops1-amar' }
@@ -47,8 +47,8 @@ pipeline {
             steps {
                 sh'''
                 cd app
-                npm test
-                npm run test:coverage
+                APP_PORT=3001 npm test
+                APP_PORT=3001 npm run test:coverage
                 '''
             }
         }
@@ -77,15 +77,18 @@ pipeline {
         
         stage('Backup') {
             steps {
-                sh'''
-                docker compose push
-                '''
+                # create credential 
+                withCredentials([usernamePassword(credentialsId: 'dockerAmar', passwordVariable: 'dockerAmarPassword', usernameVariable: 'dockerAmarUser')]) {
+                    sh "docker login -u ${env.dockerAmarUser} -p ${env.dockerAmarPassword}"
+                    sh 'docker compose push'
+                }
             }
         }
         
         
     }
 }
+
 
 
 ```
