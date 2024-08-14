@@ -21,3 +21,8 @@ sudo apt-get update
 sudo apt-get install fontconfig openjdk-11-jre
 sudo apt-get install jenkins
 ```
+
+Pipeline
+```
+git branch: 'main', url: 'https://github.com/bazigan/simple-apps.git'
+```
