@@ -70,6 +70,7 @@ pipeline {
             steps {
                 sh'''
                 docker compose build
+                docker compose down --volumes
                 docker compose up -d
                 '''
             }
@@ -77,7 +78,6 @@ pipeline {
         
         stage('Backup') {
             steps {
-                // create credential 
                 withCredentials([usernamePassword(credentialsId: 'dockerAmar', passwordVariable: 'dockerAmarPassword', usernameVariable: 'dockerAmarUser')]) {
                     sh "docker login -u ${env.dockerAmarUser} -p ${env.dockerAmarPassword}"
                     sh 'docker compose push'
@@ -88,8 +88,5 @@ pipeline {
         
     }
 }
-
-
-
 ```
 
