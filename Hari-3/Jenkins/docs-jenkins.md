@@ -77,7 +77,7 @@ pipeline {
         
         stage('Backup') {
             steps {
-                # create credential 
+                // create credential 
                 withCredentials([usernamePassword(credentialsId: 'dockerAmar', passwordVariable: 'dockerAmarPassword', usernameVariable: 'dockerAmarUser')]) {
                     sh "docker login -u ${env.dockerAmarUser} -p ${env.dockerAmarPassword}"
                     sh 'docker compose push'
