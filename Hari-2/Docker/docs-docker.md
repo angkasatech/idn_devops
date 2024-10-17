@@ -238,6 +238,23 @@ Create compose file
 ```
 vim docker-compose.yml
 ```
+Add This
+```
+name: simple
+
+services:
+  app:
+    image: bazigan/simple-amar
+    build: ./app
+    ports:
+      - "5000:3000"
+    volumes:
+      - vol-simple:/app/public/images/
+
+volumes:
+  vol-simple:
+```
+
 
 Build compose file
 ```
