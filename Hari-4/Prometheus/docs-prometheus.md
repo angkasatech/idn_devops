@@ -96,7 +96,7 @@ sudo docker run \
   --name=cadvisor \
   --privileged \
   --device=/dev/kmsg \
-  gcr.io/cadvisor/cadvisor:v0.36.0
+  gcr.io/cadvisor/cadvisor:v0.49.1
 ```
 cAdvisor is now running (in the background) on
 ```
