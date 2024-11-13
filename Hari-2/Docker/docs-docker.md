@@ -179,13 +179,19 @@ docker run -d -p host:container -v volume-name:destination image-name
 ## Docker Network
 Create Docker Network with range subnet
 ```
-docker network create --subnet 192.168.100.1/24 net-A
+docker network create --subnet 192.168.100.0/24 net-A
 ```
 
 Create container to attach custom network 
 ```
 docker run -d -p host:container -v volume-name:destination --network net-A image-name
 ```
+
+Connect exist container to network
+```
+docker network connect --link ct-new net-A ct-exist
+```
+
 ## Docker Logging and Troubleshooting
 Show information about container
 ```
