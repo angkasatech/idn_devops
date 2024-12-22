@@ -18,7 +18,7 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 Update your local package index, then finally install Jenkins: 
 ```
 sudo apt-get update
-sudo apt-get install fontconfig openjdk-11-jre
+sudo apt-get install fontconfig openjdk-17-jre
 sudo apt-get install jenkins
 ```
 
@@ -47,8 +47,8 @@ pipeline {
             steps {
                 sh'''
                 cd app
-                APP_PORT=3001 npm test
-                APP_PORT=3001 npm run test:coverage
+                npm test
+                npm run test:coverage
                 '''
             }
         }
@@ -69,23 +69,16 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh'''
-                docker compose build
-                docker compose down --volumes
-                docker compose up -d
+                docker compose up --build -d
                 '''
             }
         }
         
         stage('Backup') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerAmar', passwordVariable: 'dockerAmarPassword', usernameVariable: 'dockerAmarUser')]) {
-                    sh "docker login -u ${env.dockerAmarUser} -p ${env.dockerAmarPassword}"
-                    sh 'docker compose push'
-                }
+                 sh 'docker compose push' 
             }
         }
-        
-        
     }
 }
 ```
