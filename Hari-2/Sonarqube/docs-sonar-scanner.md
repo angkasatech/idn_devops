@@ -21,7 +21,7 @@ Create link sonar-scanner
 ln -s /opt/sonar-scanner/bin/sonar-scanner /usr/bin/
 ```
 
-## Running
+## Running (Buat di project bisa di lokal atau yg d server)
 ### Scanning
 Config project
 ```
