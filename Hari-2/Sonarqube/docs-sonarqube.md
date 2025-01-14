@@ -72,6 +72,8 @@ createuser sonar
 create database and permission
 ```
 psql
+```
+```
 ALTER USER sonar WITH ENCRYPTED password 'sonar';
 CREATE DATABASE sonarqube OWNER sonar;
 grant all privileges on DATABASE sonarqube to sonar;
