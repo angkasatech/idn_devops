@@ -210,6 +210,13 @@ Push image to Dockerhub
 ```
 docker push repository/image-name
 ```
+> example
+```
+docker login
+docker images
+docker tag simple-apps ramadhanadi/simple-apps:beta
+docker push ramadhanadi/simple-apps:beta
+```
 ## Docker Volume
 Create Docker Volume
 ```
