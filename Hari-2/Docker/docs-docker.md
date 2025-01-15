@@ -151,6 +151,13 @@ RUN apt update -y && apt install nginx -y
 ADD index.html /var/www/html/
 CMD nginx -g "daemon off;"
 ```
+>example floppybird
+```
+FROM ubuntu
+RUN apt update -y && apt install nginx -y
+ADD floppybird/. /var/www/html/
+CMD nginx -g "daemon off;"
+```
 
 Build image from Dockerfile
 ```
