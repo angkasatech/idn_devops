@@ -165,7 +165,7 @@ docker build -t image-name path
 ```
 Run Container Images
 ```
-docker run dit --name ct-games -p 8002:80
+docker run -dit --name ct-games -p 8002:80 games
 ```
 
 ## Docker Registry
