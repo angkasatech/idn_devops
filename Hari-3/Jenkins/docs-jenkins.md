@@ -21,6 +21,10 @@ sudo apt-get update
 sudo apt-get install fontconfig openjdk-17-jre
 sudo apt-get install jenkins
 ```
+Cek status jenkins dan cek password
+```
+systemctl status jenkins
+```
 
 Pipeline and Jenkinsfile
 ```
