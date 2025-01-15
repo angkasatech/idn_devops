@@ -24,6 +24,13 @@ sudo apt-get install jenkins
 Cek status jenkins dan cek password
 ```
 systemctl status jenkins
+> copy password, contoh:
+Jan 15 17:03:59 ubuntu jenkins[6727]: *a0a0abda60714afa9a6b89b6c9be3678*
+```
+login ke browsers
+```
+http://172.23.10.24:8080/
+>install suggest plugin
 ```
 
 Pipeline and Jenkinsfile
