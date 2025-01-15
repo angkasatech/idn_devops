@@ -163,6 +163,11 @@ Build image from Dockerfile
 ```
 docker build -t image-name path
 ```
+Run Container Images
+```
+docker run dit --name ct-games -p 8002:80
+```
+
 ## Docker Registry
 First you can create Dockerhub account [here](https://hub.docker.com/)
 
