@@ -158,6 +158,29 @@ RUN apt update -y && apt install nginx -y
 ADD floppybird/. /var/www/html/
 CMD nginx -g "daemon off;"
 ```
+>example simple-apps
+```
+*Pertama... buat dulu dockerfile di local, lalu push ke git, lalu pull di server
+>dockerfile
+>FROM node:18.20.5-alpine
+>WORKDIR /data
+>ADD . .
+>RUN npm install
+>CMD npm start
+
+>.dockerignore
+>node_modules/
+>coverage/
+>testing/
+
+
+cd ../day1
+cd simple-apps
+ls
+git pull
+docker build -t simple-apps .
+docker run -dit --name ct-apps -p 3000:3000 simple-apps
+```
 
 Build image from Dockerfile
 ```
