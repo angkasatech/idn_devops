@@ -159,7 +159,7 @@ ADD floppybird/. /var/www/html/
 CMD nginx -g "daemon off;"
 ```
 >example simple-apps
-```
+
 *Pertama... buat dulu dockerfile di local, lalu push ke git, lalu pull di server
 >dockerfile
 >FROM node:18.20.5-alpine
@@ -172,8 +172,7 @@ CMD nginx -g "daemon off;"
 >node_modules/
 >coverage/
 >testing/
-
-
+```
 cd ../day1
 cd simple-apps
 ls
