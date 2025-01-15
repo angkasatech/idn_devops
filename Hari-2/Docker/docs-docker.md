@@ -162,16 +162,19 @@ CMD nginx -g "daemon off;"
 
 *Pertama... buat dulu dockerfile di local, lalu push ke git, lalu pull di server
 >dockerfile
->FROM node:18.20.5-alpine
->WORKDIR /data
->ADD . .
->RUN npm install
->CMD npm start
-
+```
+FROM node:18.20.5-alpine
+WORKDIR /data
+ADD . .
+RUN npm install
+CMD npm start
+```
 >.dockerignore
->node_modules/
->coverage/
->testing/
+```
+node_modules/
+coverage/
+testing/
+```
 ```
 cd ../day1
 cd simple-apps
