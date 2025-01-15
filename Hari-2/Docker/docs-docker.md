@@ -110,11 +110,18 @@ docker run -dit -p 8001:80 --name ct-nginx ubuntu-nginx
 docker exec -it ct-nginx nginx -g "daemon off;"
 ```
 
-Export and import container image
+Export and import container image (BACKUP Image)
 ```
 docker save -o output-file ct-name
 docker load -i file
 ```
+  >Example (Backup image)
+  ```
+  docker save -o ubuntu-nginx-backup ubuntu-nginx
+  docker rmi ubuntu-nginx:latest
+  docker load -i ubuntu-nginx-backup
+  ```
+
 
 Stop container
 ```
