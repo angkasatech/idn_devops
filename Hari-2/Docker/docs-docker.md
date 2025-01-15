@@ -327,3 +327,8 @@ Stop container on compose file
 ```
 docker compose down
 ```
+
+Delete container on running (stop first that no need to delete)
+```
+docker rm -f $(docker ps -q)
+```
