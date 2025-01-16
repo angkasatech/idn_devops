@@ -96,6 +96,7 @@ Query metric
 ```
 rate(node_cpu_seconds_total{mode="system"}[1m])
 ```
+### INSTALL di docker.. bukan di server prometheus
 ### Docker Cadvisor Exporter
 Running cAdvisor in a Docker Container
 ```
