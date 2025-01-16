@@ -123,7 +123,7 @@ Add targets
 - job_name: "docker monitoring"
     scrape_interval: 5s
     static_configs:
-      - targets: ["10.23.0.12:8008"]
+      - targets: ["10.23.0.12:8080"]
         labels:
           group: 'docker'
 ```
