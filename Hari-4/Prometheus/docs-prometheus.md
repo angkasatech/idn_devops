@@ -73,6 +73,14 @@ Add Targets
         labels:
           group: 'devops'
 ```
+```
+  - job_name: "Server monitoring"
+    scrape_interval: 5s
+    static_configs:
+      - targets: ["172.23.10.14:1111", "172.23.10.24:1212", "172.23.10.34:1414"]
+        labels:
+          group: 'devops'
+```
 
 Start service
 ```
