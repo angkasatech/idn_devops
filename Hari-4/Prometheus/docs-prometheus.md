@@ -172,6 +172,10 @@ server {
 Deploy nginx exporter
 ```
 docker container run -d --rm -p 9113:9113 --name nginx-exporter nginx/nginx-prometheus-exporter -nginx.scrape-uri http://ipaddress:port/metrics
+>docker container run -d --rm -p 9113:9113 --name nginx-exporter nginx/nginx-prometheus-exporter -nginx.scrape-uri http://ipaddress:80/metrics
+```
+```
+docker container run -d --rm -p 9113:9113 --name nginx-exporter nginx/nginx-prometheus-exporter -nginx.scrape-uri http://172.23.10.14/metrics
 ```
 
 Config prometheus
