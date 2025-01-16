@@ -96,8 +96,8 @@ Query metric
 ```
 rate(node_cpu_seconds_total{mode="system"}[1m])
 ```
-### INSTALL di docker.. bukan di server prometheus
-### Docker Cadvisor Exporter
+
+### Docker Cadvisor Exporter (INSTALL di docker.. bukan di server prometheus)
 Running cAdvisor in a Docker Container
 ```
 sudo docker run \
@@ -114,7 +114,7 @@ sudo docker run \
   gcr.io/cadvisor/cadvisor:v0.49.1
 ```
 
-Config prometheus
+### Config prometheus (di prometheus)
 ```
 vim prometheus.yml
 ```
@@ -147,7 +147,7 @@ Query metric
 ```
 rate(container_cpu_usage_seconds_total{name="redis"}[1m])
 ```
-### Nginx Exporter
+### Nginx Exporter (di lokasi nginx, dalam hal ini di docker server 14)
 Edit nginx config
 ```
 vim default.conf
@@ -170,7 +170,7 @@ server {
 }
 ```
 
-Deploy nginx exporter
+### Deploy nginx exporter (LAKUKAN di server docker berada, case ini di server 14)
 ```
 docker container run -d --rm -p 9113:9113 --name nginx-exporter nginx/nginx-prometheus-exporter -nginx.scrape-uri http://ipaddress:port/metrics
 >docker container run -d --rm -p 9113:9113 --name nginx-exporter nginx/nginx-prometheus-exporter -nginx.scrape-uri http://ipaddress:80/metrics
@@ -179,7 +179,7 @@ docker container run -d --rm -p 9113:9113 --name nginx-exporter nginx/nginx-prom
 docker container run -d --rm -p 9113:9113 --name nginx-exporter nginx/nginx-prometheus-exporter -nginx.scrape-uri http://172.23.10.14/metrics
 ```
 
-Config prometheus
+### Config prometheus (lanjut di server prometheus 34)
 ```
 vim prometheus.yml
 ```
