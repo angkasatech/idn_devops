@@ -23,6 +23,14 @@ Access prometheus ui
 ```
 http://localhost:9090/
 ```
+### Node Exporter in prometheus server (start services)
+```
+./promotheus --web.listen-address 172.23.10.34:1313
+```
+>Access node metric
+```
+http://172.23.10.34:1313/metrics
+```
 
 Query prometheus
 ```
