@@ -23,14 +23,6 @@ Access prometheus ui
 ```
 http://localhost:9090/
 ```
-### Node Exporter in prometheus server (start services)
-```
-./promotheus --web.listen-address 172.23.10.34:1313
-```
->Access node metric
-```
-http://172.23.10.34:1313/metrics
-```
 
 Query prometheus
 ```
@@ -59,6 +51,12 @@ cd /etc/node_exporter
 Access node metric
 ```
 http://ip-address:port/metrics
+```
+>Access node metric
+```
+http://172.23.10.34:1313/metrics
+>Ctrl+Z (to pause)
+>bg (to start in backgrount
 ```
 
 Config prometheus
