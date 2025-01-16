@@ -112,10 +112,6 @@ sudo docker run \
   --device=/dev/kmsg \
   gcr.io/cadvisor/cadvisor:v0.49.1
 ```
-cAdvisor is now running (in the background) on
-```
-http://ip-address:port/
-```
 
 Config prometheus
 ```
@@ -135,6 +131,10 @@ Add targets
 Start Service
 ```
 ./prometheus --config.file=prometheus.yml
+```
+cAdvisor is now running (in the background) on
+```
+http://ip-address:port/
 ```
 
 Access prometheus ui
